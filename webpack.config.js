@@ -37,14 +37,6 @@ module.exports = flow(
         __dirname: true,
         process: true
     },
-    resolve: {
-        alias: {
-            'app-config': './app-config-parse'
-        }
-    },
-    externals: [{
-        'app-config-serialized': `var "${escapeString(jsonfn.stringify(pick.apply(null, [config].concat(configExports))))}"`
-    }],
     module: {
         loaders: [{
             test: new RegExp(`^${escapeRegex(require.resolve('./entry'))}$`),
