@@ -18,7 +18,6 @@
     "update-object": "^1.0.0"
   },
   "dependencies": {
-    "app-config": "file:./app-config",
     "babel": "^6.5.2",
     "babel-preset-es2015": "^6.9.0",
     "babel-register": "^6.9.0",
