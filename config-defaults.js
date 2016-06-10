@@ -1,5 +1,5 @@
 module.exports = {
-    srcRoot: 'src',
+    srcRoot: '.',
     cardPattern: /[\.\/^]card\.jsx?$/,
     transformWebpackConfig: x => x
 };
