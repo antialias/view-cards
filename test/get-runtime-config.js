@@ -16,7 +16,7 @@ describe('runtime-config', function () {
         process.chdir(testTmp);
     });
     afterEach(function () {
-        // rimraf(testTmp);
+        rimraf(testTmp);
         process.chdir(originalCwd);
     });
     describe('bundle', function () {
