@@ -8,7 +8,7 @@ const getPort = require('get-port');
 const path = require('path');
 const compiler = webpack(webpackConfig);
 const app = express();
-app.set('views', 'devboard');
+app.set('views', __dirname);
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(webpackDevMiddleware(compiler, webpackConfig.devServer));
