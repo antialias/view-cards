@@ -21,8 +21,8 @@ describe('runtime-config', function () {
     });
     describe('defaults', function () {
         beforeEach(function () {
-            delete require.cache[require.resolve('../runtime-config')];
-            delete require.cache[require.resolve(path.join(testTmp, 'card-config.json'))];
+            try {delete require.cache[require.resolve('../runtime-config')];} catch (e) {}
+            try {delete require.cache[require.resolve(path.join(testTmp, 'card-config.json'))];} catch (e) {}
         })
         it('should use the config when present', function () {
             fs.writeFileSync('card-config.json', JSON.stringify({
