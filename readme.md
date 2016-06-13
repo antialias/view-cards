@@ -27,3 +27,7 @@ The directory that contains all your devcards. Defaults to `.`
 ## `cardPattern`
 
 A regular expression that is used to match your card file names. Defaults to `/[\.\/^]card\.jsx?$/`
+
+## `template`
+
+A string containing the absolute path of a custom ejs template to render cards within. The custom template should include "/js/devboard.js".
