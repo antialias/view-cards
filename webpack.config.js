@@ -39,6 +39,9 @@ module.exports = flow(
     },
     module: {
         loaders: [{
+            test: /\.json$/,
+            loader: 'json'
+        }, {
             test: new RegExp(`^${escapeRegex(require.resolve('./entry'))}$`),
             loader: StringReplacePlugin.replace({
                 replacements: [

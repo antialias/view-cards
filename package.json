@@ -28,6 +28,7 @@
     "get-port": "^2.1.0",
     "js-string-escape": "^1.0.1",
     "json-fn": "^0.60.0",
+    "json-loader": "^0.5.4",
     "json3": "^3.3.2",
     "lodash.flow": "^3.3.0",
     "lodash.pick": "^4.2.1",
