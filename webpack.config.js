@@ -14,10 +14,11 @@ const configExports = [
 ];
 module.exports = flow(
     addExtension('.js'),
-    config.transformWebpackConfig
+    config.transformWebpackConfig,
+    addExtension(''),
 )({
     entry: {
-        "devboard.js": [require.resolve('./entry'), require.resolve('webpack-hot-middleware/client')]
+        "devboard.js": [require.resolve('./entry.js'), require.resolve('webpack-hot-middleware/client')]
     },
     output: {
         filename: '[name]',
