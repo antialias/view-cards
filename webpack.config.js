@@ -4,10 +4,12 @@ const jsonfn = require('json-fn');
 const path = require('path');
 const flow = require('lodash.flow');
 const pick = require('lodash.pick');
-const addExtension = require('webpack-config-builders').addExtension;
+const configBuilders = require('webpack-config-builders');
 const config = require('./runtime-config');
 const webpack = require('webpack');
 const StringReplacePlugin = require("string-replace-webpack-plugin");
+const addExtension = configBuilders.addExtension;
+const addPlugin = configBuilders.addPlugin;
 const configExports = [
     'srcRoot',
     'cardPattern'
@@ -16,6 +18,7 @@ module.exports = flow(
     addExtension('.js'),
     config.transformWebpackConfig,
     addExtension(''),
+    addPlugin(new webpack.HotModuleReplacementPlugin())
 )({
     entry: {
         "devboard.js": [require.resolve('./entry.js'), require.resolve('webpack-hot-middleware/client')]
