@@ -8,7 +8,7 @@ const addExtension = require('webpack-config-builders').addExtension;
 const appConfigPath = require('./app-config-path');
 const config = require('./runtime-config');
 const webpack = require('webpack');
-var StringReplacePlugin = require("string-replace-webpack-plugin");
+const StringReplacePlugin = require("string-replace-webpack-plugin");
 const configExports = [
     'srcRoot',
     'cardPattern'
