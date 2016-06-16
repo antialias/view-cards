@@ -1,3 +1,10 @@
+'use strict';
 const path = require('path');
-const appConfigPath = require('./app-config-path');
-module.exports = require(appConfigPath);
+const unresolvedPath = path.join(process.cwd(), 'card-config');
+let appConfigPath;
+try {
+    appConfigPath = require.resolve(unresolvedPath);
+} catch(e) {}
+if (appConfigPath) {
+    module.exports = require(appConfigPath);
+}

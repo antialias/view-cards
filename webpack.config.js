@@ -5,7 +5,6 @@ const path = require('path');
 const flow = require('lodash.flow');
 const pick = require('lodash.pick');
 const addExtension = require('webpack-config-builders').addExtension;
-const appConfigPath = require('./app-config-path');
 const config = require('./runtime-config');
 const webpack = require('webpack');
 const StringReplacePlugin = require("string-replace-webpack-plugin");
