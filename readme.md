@@ -27,3 +27,11 @@ The directory that contains all your devcards. Defaults to `.`
 ## `cardPattern`
 
 A regular expression that is used to match your card file names. Defaults to `/[\.\/^]card\.jsx?$/`
+
+## `stylesheets`
+
+An array of URIs to stylesheets that will be added to `<head>` in the the template rendered by express.
+
+## `publicDir`
+
+A path relative to `process.cwd()` that will be the public assets directory for the devcard server.
