@@ -1,6 +1,9 @@
 <!doctype html>
 <html>
 <head>
+    <%_ stylesheets.forEach(path => { _%>
+    <link rel='stylesheet' href='<%- path %>'>
+    <%_ }) _%>
 </head>
 <body>
     <script src='/js/devboard.js' type='application/javascript'></script>
