@@ -10,4 +10,4 @@ get_script_dir () {
      DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
      echo "$DIR"
 }
-node $(get_script_dir)/_start
+node $(get_script_dir)/start
