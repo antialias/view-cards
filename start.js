@@ -14,6 +14,4 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(webpackDevMiddleware(compiler, webpackConfig.devServer));
 app.use(webpackHotMiddleware(compiler));
 app.get('/', (req, res) => res.render('template'));
-getPort().then(port => app.listen(port, () => {
-    open(`http://localhost:${port}`);
-}));
+getPort().then(port => app.listen(port, () => open(`http://localhost:${port}`)));
