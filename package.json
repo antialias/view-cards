@@ -21,7 +21,6 @@
     "ejs": "^2.4.2",
     "escape-string-regexp": "^1.0.5",
     "express": "^4.13.4",
-    "font-awesome": "^4.6.3",
     "get-port": "^2.1.0",
     "js-string-escape": "^1.0.1",
     "json-fn": "^0.60.0",
