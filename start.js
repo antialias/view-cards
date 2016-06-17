@@ -2,6 +2,7 @@ const express = require('express');
 const config = require('./runtime-config');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
+const favicon = require('serve-favicon');
 const webpackConfig = require('./webpack.config');
 const webpack = require('webpack');
 const open = require('openurl').open;
@@ -9,6 +10,7 @@ const getPort = require('get-port');
 const path = require('path');
 const compiler = webpack(webpackConfig);
 const app = express();
+app.use(favicon(path.join(__dirname, 'favicon.ico')));
 app.set('views', __dirname);
 app.set('view engine', 'ejs');
 if (config.publicDir) {
