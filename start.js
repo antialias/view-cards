@@ -1,3 +1,4 @@
+const pathExists = require('path-exists').sync;
 const express = require('express');
 const config = require('./runtime-config');
 const webpackDevMiddleware = require('webpack-dev-middleware');
@@ -10,7 +11,11 @@ const getPort = require('get-port');
 const path = require('path');
 const compiler = webpack(webpackConfig);
 const app = express();
-app.use(favicon(path.join(__dirname, 'favicon.ico')));
+app.use(favicon([
+    config.favicon && path.join(process.cwd(), config.favicon),
+    path.join(process.cwd(), 'favicon.ico'),
+    path.join(__dirname, 'favicon.ico')
+].filter(x => x).find(pathExists)));
 app.set('views', __dirname);
 app.set('view engine', 'ejs');
 if (config.publicDir) {

@@ -35,3 +35,7 @@ An array of URIs to stylesheets that will be added to `<head>` in the the templa
 ## `publicDir`
 
 A path relative to `process.cwd()` that will be the public assets directory for the devcard server.
+
+## `favicon`
+
+Path to the favicon used for the devcard server. Defaults to favicon.ico in the project director if present, otherwise uses view-cards's built-in "hand of cards" favicon.

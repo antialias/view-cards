@@ -31,6 +31,7 @@
     "lodash.flow": "^3.3.0",
     "lodash.pick": "^4.2.1",
     "openurl": "^1.1.1",
+    "path-exists": "^3.0.0",
     "serve-favicon": "^2.3.0",
     "string-replace-loader": "^1.0.2",
     "string-replace-webpack-plugin": "0.0.3",
