@@ -11,6 +11,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "peerDependencies": {
+    "devboard": "^0.7.1"
+  },
   "devDependencies": {
     "cheerio": "^0.20.0",
     "mkdirp": "^0.5.1",
