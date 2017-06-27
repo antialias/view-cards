@@ -38,9 +38,8 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "serve-favicon": "^2.3.0",
-    "string-replace-loader": "^1.0.2",
-    "string-replace-webpack-plugin": "0.0.3",
-    "webpack": "^1.13.1",
+    "string-replace-loader": "^1.2.0",
+    "webpack": "^3.0.0",
     "webpack-config-builders": "^1.0.3",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.10.0"

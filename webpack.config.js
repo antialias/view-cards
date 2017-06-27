@@ -7,7 +7,6 @@ const pick = require('lodash.pick');
 const configBuilders = require('webpack-config-builders');
 const config = require('./runtime-config');
 const webpack = require('webpack');
-const StringReplacePlugin = require("string-replace-webpack-plugin");
 const addExtension = configBuilders.addExtension;
 const addPlugin = configBuilders.addPlugin;
 const configExports = [
@@ -17,7 +16,6 @@ const configExports = [
 module.exports = flow(
     addExtension('.js'),
     config.transformWebpackConfig,
-    addExtension(''),
     addPlugin(new webpack.HotModuleReplacementPlugin())
 )({
     entry: {
@@ -41,25 +39,28 @@ module.exports = flow(
         process: true
     },
     module: {
-        loaders: [{
+        rules: [{
             test: /\.json$/,
-            loader: require.resolve('json-loader')
+            use: require.resolve('json-loader')
         }, {
             test: new RegExp(`^${escapeRegex(require.resolve('./entry'))}$`),
-            loader: StringReplacePlugin.replace({
-                replacements: [
-                    {
-                        pattern: /__PATH_TO_CARDS/,
-                        replacement: () => `"${escapeString(path.join(path.relative(__dirname, process.cwd()), config.srcRoot))}"`
-                    }, {
-                        pattern: /__CARD_PATTERN/,
-                        replacement: () => config.cardPattern.toString()
+            use: [
+                {
+                    loader: 'string-replace-loader',
+                    options: {
+                        multiple: [
+                            {
+                                search: '__PATH_TO_CARDS',
+                                replace: JSON.stringify(path.join(path.relative(__dirname, process.cwd()), config.srcRoot)),
+                            }, {
+                                search: '__CARD_PATTERN',
+                                replace: config.cardPattern.toString(),
+                            }
+                        ]
                     }
-                ]
-            })
+                }
+            ]
         }]
     },
-    plugins: [
-        new StringReplacePlugin()
-    ]
 });
+console.log(JSON.stringify(module.exports))
